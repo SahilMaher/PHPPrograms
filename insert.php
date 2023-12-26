@@ -1,13 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert</title>
-</head>
-<body>
-    <form method="post">
-        <input type="text" name='' placeholder="name">
-    </form>
-</body>
-</html>
+<?php
+$link= mysqli_connect("localhost","root","","php");
+if($link === false)
+{
+    die("database connection error" . mysqli_connect_error());
+}
+else
+{
+    echo"worked";
+}
+$fnm = $_POST['firstname'];
+$lnm =$_POST['lastname'];
+$num =$_POST['number'];
+$ps  =$_POST['password'];
+$ct  =$_POST['city'];
+$ad  = $_POST['address'];
+
+
+$sql ="insert into test values('','$fnm','$lnm',$num ,'$ps ','$ct','$ad')";
+if(mysqli_query($link,$sql))
+{
+    echo "data insert sucess";
+}
+
+
+?> 
