@@ -68,3 +68,4 @@ echo"</table>";
 echo"</center>";
 
 ?>
+<a href='insert.php'>Insert Data</a>
